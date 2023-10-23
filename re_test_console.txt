@@ -1,0 +1,41 @@
+using 726 images for training.
+train epoch[1/10] loss: 0.549: 100%|██████████| 23/23 [00:06<00:00,  3.70it/s]
+  0%|          | 0/23 [00:00<?, ?it/s]【EPOCH: 】 1
+training loss： 21.121554225683212
+training accuracy：  76.45%
+train epoch[2/10] loss: 0.569: 100%|██████████| 23/23 [00:08<00:00,  2.57it/s]
+  0%|          | 0/23 [00:00<?, ?it/s]【EPOCH: 】 2
+training loss： 9.536341726779938
+training accuracy：  89.53%
+train epoch[3/10] loss: 0.224: 100%|██████████| 23/23 [00:08<00:00,  2.60it/s]
+  0%|          | 0/23 [00:00<?, ?it/s]【EPOCH: 】 3
+training loss： 6.987525299191475
+training accuracy：  91.60%
+train epoch[4/10] loss: 0.168: 100%|██████████| 23/23 [00:06<00:00,  3.79it/s]
+【EPOCH: 】 4
+training loss： 6.058754101395607
+training accuracy：  93.25%
+train epoch[5/10] loss: 0.367: 100%|██████████| 23/23 [00:05<00:00,  3.95it/s]
+【EPOCH: 】 5
+training loss： 5.282058298587799
+training accuracy：  93.80%
+train epoch[6/10] loss: 0.176: 100%|██████████| 23/23 [00:05<00:00,  4.01it/s]
+【EPOCH: 】 6
+training loss： 4.840847849845886
+training accuracy：  94.49%
+train epoch[7/10] loss: 0.118: 100%|██████████| 23/23 [00:05<00:00,  4.03it/s]
+【EPOCH: 】 7
+training loss： 4.002286501228809
+training accuracy：  94.49%
+train epoch[8/10] loss: 0.371: 100%|██████████| 23/23 [00:05<00:00,  3.98it/s]
+  0%|          | 0/23 [00:00<?, ?it/s]【EPOCH: 】 8
+training loss： 3.576049204915762
+training accuracy：  96.28%
+train epoch[9/10] loss: 0.084: 100%|██████████| 23/23 [00:05<00:00,  4.03it/s]
+  0%|          | 0/23 [00:00<?, ?it/s]【EPOCH: 】 9
+training loss： 3.7253779843449593
+training accuracy：  95.32%
+train epoch[10/10] loss: 0.284: 100%|██████████| 23/23 [00:05<00:00,  4.02it/s]
+【EPOCH: 】 10
+training loss： 3.439484864473343
+training accuracy：  95.45%
