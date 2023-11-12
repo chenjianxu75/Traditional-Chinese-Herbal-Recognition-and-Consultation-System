@@ -91,15 +91,12 @@ Test accuracy : 1.0
 ```
 ##UI пользовательский интерфейс
 Это начальный интерфейс, система предлагает пользователю выбрать картинку и сделать прогнозы.
-![Example Image](https://github.com/whossssssss/ML/blob/google-colab/test_origin.png)
-
+![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191311.png)
 Когда в модель передается изображение (распространенные форматы изображений, такие как jpg, jpeg, png и т. д.), интерфейс делает прогнозы относительно изображения.
-
-![Example Image](https://github.com/whossssssss/ML/blob/google-colab/test_1.png)
-![Example Image](https://github.com/whossssssss/ML/blob/google-colab/test_2.png)
-![Example Image](https://github.com/whossssssss/ML/blob/google-colab/test_3.png)
-
-
+![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191324.png)
+![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191331.png)
+![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191800.png)
+![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191807.png)
 Мы также будем стремиться изучить больше функций, таких как возможность выводить лечебные эффекты традиционной китайской медицины одновременно с выводом, а также обучать и внедрять робота вопросов и ответов традиционной китайской медицины (то есть он может давать соответствующие диагностика традиционной китайской медицины на основе симптомов, предоставленных пользователем, и т. д.)
 
 Последующий контент будет постоянно обновляться...
