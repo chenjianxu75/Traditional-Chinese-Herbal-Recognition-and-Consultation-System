@@ -1,7 +1,7 @@
 ## Read this in other languages:
 
-- [English]([./README_EN.md](https://github.com/whossssssss/ML/blob/google-colab/README_en.md))
-- [中文]([./README_CN.md](https://github.com/whossssssss/ML/blob/google-colab/README_cn.md))
+- [English]([(https://github.com/whossssssss/ML/blob/google-colab/README_en.md))
+- [中文]([(https://github.com/whossssssss/ML/blob/google-colab/README_cn.md))
 
 
 
