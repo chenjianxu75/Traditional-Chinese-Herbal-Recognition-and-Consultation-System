@@ -1,0 +1,42 @@
+[int]
+src_max_len = 1024
+trg_max_len = 1024
+n_heads = 12
+d_model = 768
+d_ff = 3072
+n_enc_layers = 12
+n_dec_layers = 12
+src_vocab_size = 23000
+trg_vocab_size = 23000
+beam_size = 5
+
+max_decode_steps = 256
+
+[float]
+gamma = 1
+#repetition_penalty = -1
+
+top_p = 0.95
+temperature = 1
+
+[str]
+src_vocab = model/vocab/zh_vocab.txt
+trg_vocab = model/vocab/zh_vocab.txt
+load_model = model/med/med.base.model
+search_strategy = sample
+src_tokenizer = mimix
+trg_tokenizer = mimix
+activation = gelu_new
+model = transformer
+task = enc_dec
+
+device_id = 0
+
+[bool]
+use_cuda = False
+share_src_trg_emb = True
+share_emb_out_proj = True
+scale_embedding = False
+norm_before_pred = True
+use_proj_bias = False
+use_pre_norm = True
