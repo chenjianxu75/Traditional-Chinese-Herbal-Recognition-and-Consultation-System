@@ -88,10 +88,28 @@ _________________________________________________________________
 Test accuracy : 1.0
 ```
 
-#### 用户界面 UI
+## chat.py
+
+ChatTranslator 是一个使用 googletrans 库进行文本翻译和语言检测的 Python 类。
+
+##### 功能
+
+- **文本翻译**：将指定文本翻译成目标语言。
+- **语言检测**：检测指定文本的语言。
+- **处理查询**：处理文本查询，包括语言检测和翻译。
+
+这段代码定义了一个 ChatTranslator 类，它使用 googletrans 库进行文本翻译和语言检测，并使用 mimix 模块中的 run_interactive 函数获取医疗诊断结果。这段代码的主要功能是将用户输入的内容翻译成中文，获取诊断结果后再将其翻译回用户的原始语言。
+
+当用户输入一个查询时，ChatTranslator会检测输入的语言，将其翻译成中文，然后运行医疗诊断模型。在得到诊断结果后，它会将每个结果翻译回用户的原始语言。这样，用户就可以用自己的语言接收医疗诊断信息。
+
+## 用户界面 UI
+
 这是初始的用户界面，系统会提示用户选择一张图片并进行预测。
+
 ![用户界面示例图片](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191311.png)
+
 当模型接收到一张图片（支持常见的图片格式，如 jpg, jpeg, png 等），界面会对图像进行预测。
+
 ![用户界面示例图片](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191324.png)
 ![用户界面示例图片](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191331.png)
 ![用户界面示例图片](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191800.png)
