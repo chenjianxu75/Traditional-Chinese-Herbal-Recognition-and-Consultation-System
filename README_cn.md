@@ -42,14 +42,14 @@ data_set_split 函数：
 - 首先，它提取源数据文件夹中所有类别（以文件夹形式存在）。
 - 然后，在目标文件夹中创建三个子文件夹：train、val 和 test，分别用于存储训练集、验证集和测试集的图像数据。
 - 接下来，它遍历每个类别：
-  - 对于每个类别，它会随机打乱该类别的图像数据顺序。
-  - 根据设定的比例将图像复制到训练集、验证集或测试集文件夹中。
-  - 最后，函数输出每个类别的详细信息，包括文件夹路径和每个数据子集中的图像数量。
+- 对于每个类别，它会随机打乱该类别的图像数据顺序。
+- 根据设定的比例将图像复制到训练集、验证集或测试集文件夹中。
+- 最后，函数输出每个类别的详细信息，包括文件夹路径和每个数据子集中的图像数量。
 
 ## train.py
 此代码通过使用预训练的 MobileNetV2 模型作为基础模型进行迁移学习来选择模型。以下是模型的主要信息：
 - 使用的预训练模型：MobileNetV2。
-- 固定基础模型权重：`base_model.trainable = False`，意味着预训练模型 MobileNetV2 的权重被冻结，不进行微调。
+- 固定基础模型权重：`base_model.trainable = False`，意味着预训练模型 MobileNetV2的权重被冻结，不进行微调。
 - 自定义层：在 MobileNetV2 模型上添加的全局平均池化层和输出层。
 
 以下是训练模型的图形输出：
@@ -92,7 +92,7 @@ Test accuracy : 1.0
 
 ChatTranslator 是一个使用 googletrans 库进行文本翻译和语言检测的 Python 类。
 
-##### 功能
+### 功能
 
 - **文本翻译**：将指定文本翻译成目标语言。
 - **语言检测**：检测指定文本的语言。
@@ -114,6 +114,9 @@ ChatTranslator 是一个使用 googletrans 库进行文本翻译和语言检测�
 ![用户界面示例图片](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191331.png)
 ![用户界面示例图片](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191800.png)
 ![用户界面示例图片](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191807.png)
+
+以下是动图展示:
+![Example Image](https://github.com/whossssssss/ML/blob/google-colab/2378fe0a-ae7c-4874-beed-58958a718585.gif)
 
 ###### 医疗诊断（chat）
 该医疗问答模型使用了来自mimix库的med_base_conf权重文件以及med.base.model模型，并基于本地语料库以及测试数据进行相应的优化。
