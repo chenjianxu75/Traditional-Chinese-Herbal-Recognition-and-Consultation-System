@@ -12,13 +12,21 @@ This model aims to assist people who do not understand or are unfamiliar with tr
 
 ## Specific Code Scheme
 
-> ├─ read.py # Data reading
-> ├─ split.py # Data classification
-> ├─ images  # Image files
-> ├─ models # Model
-> ├─ main.py # User interface (This part was not completed at the time of uploading)
-> ├─ test.py # Model testing
-> ├─ train.py # Model training
+> ─── read.py # Data Reading
+>
+> ─── split.py # Data Categorization
+>
+> ─── images  # Image Files
+>
+> ─── models # Models
+>
+> ─── main.py # User Interface 
+>
+> ─── test.py # Model Testing
+>
+> ─── train.py # Model Training
+>
+> ─── chat.py # Language Translation
 
 ## read.py
 The main function of this code is to analyze the number of images in each subfolder of the specified folder and use the Matplotlib library to create a horizontal bar chart to visually display the distribution of the number of images in each subfolder. The main steps include:
@@ -86,15 +94,59 @@ _________________________________________________________________
 Test accuracy: 1.0
 ```
 
-UI User Interface
-This is the initial interface, the system offers the user to select a picture and make predictions.
-![Example Image]((https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191311.png)
-When an image is passed to the model (common image formats such as jpg, jpeg, png, etc.), the interface makes predictions regarding the image.
-![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191324.png)
-![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191331.png)
-![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191800.png)
-![Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191807.png)
-We also aim to explore more features, such as the ability to output the therapeutic effects of traditional Chinese medicine simultaneously with the output, as well as training and implementing a traditional Chinese medicine Q&A robot (i.e., it can provide appropriate traditional Chinese medicine diagnoses based on symptoms provided by the user, etc.)
+## chat.py
 
-Subsequent content will be continuously updated...
+ChatTranslator is a Python class that utilizes the googletrans library for text translation and language detection.
+
+### Features
+
+- **Text Translation**: Translates specified text into the target language.
+- **Language Detection**: Identifies the language of the given text.
+- **Processing Queries**: Handles text queries, including language detection and translation.
+
+This code defines the ChatTranslator class, which employs the googletrans library for text translation and language detection, and uses the run_interactive function from the mimix module to obtain medical diagnosis results. The primary function of this code is to translate user inputs into Chinese, get the diagnosis results, and then translate them back to the user's original language.
+
+Upon receiving a query from the user, ChatTranslator will detect the language of the input, translate it into Chinese, and then run the medical diagnostic model. After obtaining the diagnosis results, it will translate each result back into the user's original language, enabling users to receive medical diagnostic information in their own language.
+
+## User Interface UI
+
+This is the initial user interface, prompting users to select an image for prediction.
+
+![User Interface Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191311.png)
+
+When the model receives an image (supports common image formats like jpg, jpeg, png, etc.), it predicts based on the image.
+
+![User Interface Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191324.png)
+![User Interface Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191331.png)
+![User Interface Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191800.png)
+![User Interface Example Image](https://github.com/whossssssss/ML/blob/google-colab/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-12%20191807.png)
+
+Animated demonstration below:
+![Example Image](https://github.com/whossssssss/ML/blob/google-colab/2378fe0a-ae7c-4874-beed-58958a718585.gif)
+
+## Details on Text Dialogue Model Training
+
+The model is based on a Transformer's encode-decode (enc-dec) architecture. This model features 216 million parameters, 12 layers, a model dimension (d_model) of 768, and uses 12 attention heads. The training data includes 2.7 million samples and is 1.38GB in size.
+
+The training dataset for the model is "Huatuo-26M," a large-scale Chinese medical Q&A dataset. This dataset is compiled from various sources:
+
+- **Online Medical Consultation Website**: Collected from an online medical consultation website named “QianwenHealth.” It includes a large number of online consultation records provided by medical experts. Each record is a Q&A pair: a patient asks a question, and a medical doctor answers it. Directly crawled patient questions and doctor answers from this website, resulting in 31,677,604 Q&A pairs. After removing Q&A pairs containing special characters and duplicates, 25,341,578 pairs remained.
+- **Medical Encyclopedias**: Collected disease and medication-related encyclopedia entries from the Chinese Wikipedia, including 8,699 entries for diseases and 2,736 for medications, as well as 226,432 high-quality medical articles from the “Qianwen Health” website. The articles were structured into title-paragraph pairs, and templates were designed to convert each title into a question that could be answered by the corresponding paragraph, resulting in Q&A pairs.
+- **Medical Knowledge Bases**: Extracted medical Q&A pairs from several existing knowledge bases, including CPubMed-KG (a Chinese medical literature knowledge graph based on large-scale medical literature data from the Chinese Medical Association), 39Health-KG, and Xywy-KG (two open-source knowledge graphs). The entities and relationships from these knowledge bases were cleaned and merged, resulting in 798,444 Q&A pairs.
+
+The "Huatuo-26M" dataset encompasses various data sources from real medical consultations, medical encyclopedias to professional medical knowledge bases, making it not only large-scale but also rich in content, covering a wide range of topics and knowledge points in the medical field. Such a dataset provides a solid foundation for training the Chinese medical Q&A model.
+
+###### Medical Diagnosis (chat)
+The medical Q&A model uses the med_base_conf weight file and med.base.model model from the mimix library, optimized based on a local corpus and test data.
+
+The content of medical Q&A is mostly diagnosed from the perspective of traditional Chinese medicine, such as "Qi stagnation and blood stasis," "consolidating the root and nurturing the origin," etc. The prescriptions are also mainly traditional Chinese medicines or proprietary Chinese medicines, and dietary therapy, such as "Xiao Huo Luo Dan, Si Xiao Wan," and dietary recommendations like "eating more carrots, kelp, lilies, etc., to treat liver and gallbladder damp-heat."
+
+Based on secondary training with the local corpus, while retaining the original traditional Chinese medicine diagnoses and prescriptions, some Western medicine prescriptions are also added, such as "using chloramphenicol eye drops locally to treat conjunctivitis," "applying levofloxacin eye drops for keratitis," etc., making the diagnosis more accurate and targeted, and the treatment plans more diversified and effective.
+
+Also, users can choose the desired language for the Q&A, and the responses will be adjusted based on the language used by the user, making it more user-friendly.
+###### Please note, the medical diagnosis model is for reference only and cannot replace a doctor's diagnosis. For detailed and specific diagnosis, please visit a hospital.
+
+Below is an example of the medical diagnosis model in action:
+
+![User Interface Example Image](https://github.com/whossssssss/ML/blob/google-colab/show_2.gif)
 
